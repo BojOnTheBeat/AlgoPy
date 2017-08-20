@@ -136,12 +136,21 @@ class Graph(object):
                     if visited[adjacentNode] is False:
                         stack.push(adjacentNode)
 
+    # recursive verstion
+
+    def dfs_recursive(self, startNode, visited={}):
+        if not visited:
+            for node in self.getNodes():
+                visited[node] = False
+        visited[startNode] = True
+        print startNode,
+        for adjacentNode in self.getAdjacent(startNode):
+            if visited[adjacentNode] is False:
+                self.dfs_recursive(adjacentNode, visited)
 
 
 
 
-
-   # def dfsHelper(self, startNode, visited):
 
 
 

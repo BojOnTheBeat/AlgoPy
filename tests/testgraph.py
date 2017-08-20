@@ -19,6 +19,8 @@ if __name__ == '__main__':
     g.addEdge(2, 3)
     g.addEdge(3, 3)
 
+    g.dfs_recursive(2)
+    print("\n")
     g.dfs(2)
 
     # print(g.getEdges())
