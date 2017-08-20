@@ -1,8 +1,10 @@
 """
 Python implementation of a Graph.
-Using adjacency list implememtation
+Using adjacency list implememtation.
+Uses the queue and stack data structures
 """
 from collections import defaultdict
+from queue import Queue
 
 
 class Graph(object):
@@ -81,18 +83,49 @@ class Graph(object):
 
         return len(self.graph[node])
 
+    def getAdjacent(self, node):
+        """
+        Return a list of all the adjacent nodes to the given node
+        """
+        return self.graph[node]
+
     # detect cycle in undirected
     # detect cycle in directed
     # bfs
+
+    def bfs(self, startNode):
+        """
+        This is a function that performs a Breadth First Search
+        On the graph and prints out the order of the search
+        """
+        queue = Queue()
+
+        # Mark all the nodes as not visited
+        visited = {}
+        for node in self.getNodes():
+            visited[node] = False
+
+        queue.enqueue(startNode)
+
+        while not queue.isEmpty():
+            s = queue.dequeue()
+            visited[s] = True
+            print s,
+
+            # enqueue all the adjacent vertices to s
+            # if they've not already been visited
+
+            for adjacentNode in self.getAdjacent(s):
+                if visited[adjacentNode] is False:
+                    queue.enqueue(adjacentNode)
+                    visited[adjacentNode] = True
+
     # dfs
+    # bfs applications
+    # dfs applications
     # topological sort
     # dijkstra
     # longest path in a DAG
     # shortest path
+    # kruskal(mst)
     # Assign direction to edges so that the DAG remains acyclic
-
-
-
-
-
-

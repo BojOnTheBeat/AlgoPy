@@ -87,6 +87,12 @@ class LinkedList(object):
 
     # check if ll contains a loop/cycle
 
+    # remove loop from linked list
+
+    # remove last occurrence of an item in the linked list
+
+    # rotate a linked list (circular?)
+
     # size
 
     # delete element
@@ -100,6 +106,8 @@ class LinkedList(object):
     # find middle element in one pass
 
     # remove duplicate nodes in an UNSORTED linked list
+
+    # remove duplicates from a sorted linked list
 
     # check if sorted
 

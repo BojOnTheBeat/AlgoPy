@@ -10,15 +10,21 @@ except:
 
 if __name__ == '__main__':
 
-    g = Graph('undirected')
-    g.addEdge(1, 2)
-    g.addEdge(1, 3)
-    g.addEdge(1, 4)
-    g.addEdge(2, 3)
-    print(g.getEdges())
-    print(g.getNodes())
-    print(g.getDegrees())
+    g = Graph('directed')
 
-    print(g.getDegree(1))
-    print(g)
+    g.addEdge(0, 1)
+    g.addEdge(0, 2)
+    g.addEdge(1, 2)
+    g.addEdge(2, 0)
+    g.addEdge(2, 3)
+    g.addEdge(3, 3)
+
+    g.bfs(2)
+
+    # print(g.getEdges())
+    # print(g.getNodes())
+    # print(g.getDegrees())
+
+    # print(g.getDegree(1))
+    # print(g)
 
