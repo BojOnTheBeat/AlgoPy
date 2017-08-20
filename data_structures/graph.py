@@ -5,6 +5,7 @@ Uses the queue and stack data structures
 """
 from collections import defaultdict
 from queue import Queue
+from stack import Stack
 
 
 class Graph(object):
@@ -89,10 +90,6 @@ class Graph(object):
         """
         return self.graph[node]
 
-    # detect cycle in undirected
-    # detect cycle in directed
-    # bfs
-
     def bfs(self, startNode):
         """
         This is a function that performs a Breadth First Search
@@ -121,8 +118,42 @@ class Graph(object):
                     visited[adjacentNode] = True
 
     # dfs
+
+    def dfs(self, startNode):
+        visited, stack = {}, Stack([startNode])
+        for node in self.getNodes():
+            visited[node] = False
+
+        while not stack.isEmpty():
+            vertex = stack.pop()
+
+            if visited[vertex] is False:
+                visited[vertex] = True
+                print vertex,
+
+                # add the unvisited adjacent nodes
+                for adjacentNode in self.getAdjacent(vertex):
+                    if visited[adjacentNode] is False:
+                        stack.push(adjacentNode)
+
+
+
+
+
+
+   # def dfsHelper(self, startNode, visited):
+
+
+
+
+
+
+
+
     # bfs applications
     # dfs applications
+    # detect cycle in undirected
+    # detect cycle in directed
     # topological sort
     # dijkstra
     # longest path in a DAG

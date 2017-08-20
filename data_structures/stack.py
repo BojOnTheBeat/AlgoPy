@@ -20,7 +20,7 @@ class Stack(object):
         """
         self.stack.append(item)
 
-    def pop(self, item):
+    def pop(self):
         """
         pop and return item from the stack. Returns None if stack is empty
         """
@@ -35,6 +35,12 @@ class Stack(object):
     def size(self):
         """check the size of the stack"""
         return len(self.stack)
+
+    def extend(self, lst):
+        """
+        Extend the stack
+        """
+        self.stack.extend(lst)
 
 
 
